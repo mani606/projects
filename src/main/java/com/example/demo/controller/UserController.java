@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.example.demo.bean.Hobby;
 import com.example.demo.bean.User;
 import com.example.demo.service.UserService;
 
@@ -43,10 +45,15 @@ public class UserController {
 	     headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getName()).toUri());
 	     return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	 }
+//	 @PostMapping("/hobbies")
+//	    public String saveHobby(@RequestBody Hobby hobby) {
+//	            return userService.saveAddress(hobby);
+//	        
+//	    }
 
 	 @GetMapping(value="/get", headers="Accept=application/json")
-	 public List<User> getAllUser() {	 
-	  List<User> tasks=userService.getUser();
+	 public Set<User> getAllUser() {	 
+	  Set<User> tasks=(Set<User>) userService.getUser();
 	  return tasks;
 	
 	 }

@@ -5,10 +5,6 @@ import java.util.List;
 
 import com.example.demo.bean.User;
 
-
-
-
-
 public interface UserDao {
 	
 	public void addUser(User user);

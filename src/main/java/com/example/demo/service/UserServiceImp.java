@@ -14,7 +14,6 @@ import com.example.demo.bean.User;
 import com.example.demo.dao.UserDao;
 
 
-
 @Service
 @Transactional
 public class UserServiceImp implements UserService {
@@ -42,8 +41,7 @@ public class UserServiceImp implements UserService {
 		userDao.delete(id);
 	}
 
-
-		
+	
 	public User updatePartially(User user, int id) {
 		userDao.updateCountry(user,id);
 		return userDao.findById(id);
@@ -53,7 +51,11 @@ public class UserServiceImp implements UserService {
 		// TODO Auto-generated method stub
 		return userDao.update(user, id);
 	}
-
+//	 public String saveHobby(Hobby hobby) {
+//	        // TODO Auto-generated method stub
+//	        sessionFactory.getCurrentSession().persist(hobby);
+//	        return "user added successfully";
+//	    }
 }
 
 
